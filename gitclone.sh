@@ -1,5 +1,5 @@
 #!/bin/bash
-#bash setup_ssh.sh "your-email@example.com" "my_custom_key_name"
+#bash gitclone.sh "your-email@example.com" "my_custom_key_name"
 #EMAIL="user@email.com" KEY_NAME="work_key" bash setup_ssh.sh
 # Check if arguments are provided; if not, use defaults or exit
 EMAIL=${1:-"default@example.com"}
