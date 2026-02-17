@@ -1,4 +1,6 @@
 #!/bin/bash
+cd /home/ec2-user/ssl/crone_job
+git pull origin main
 
 # Get the full path to docker (standard on Amazon Linux)
 DOCKER_BIN=$(which docker || echo "/usr/bin/docker")

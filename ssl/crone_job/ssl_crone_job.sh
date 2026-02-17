@@ -17,7 +17,7 @@ TARGET_SCRIPT="$DIR/renewer.sh"
 LOG_FILE="$DIR/renewer.log"
 
 # 2. Define the schedule (e.g., Every hour at minute 0)
-CRON_SCHEDULE="0 * * * *"
+CRON_SCHEDULE="0 9 * * *"
 
 # 3. Ensure the worker script is executable
 chmod +x "$TARGET_SCRIPT"
