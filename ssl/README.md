@@ -19,6 +19,8 @@ Note :- in addition to this there should be another volume attached to this cont
 ```
 2) Update nginx config file to accept http requests from letsencrypt servers.
 ```cs
+
+
 server {
     listen 80;
     server_name yourdomain.com www.yourdomain.com;
@@ -78,5 +80,9 @@ create a file with the command.
 ```bash
 # Runs at 3:00 AM and 3:00 PM every day
 0 3 \* \* 2 /usr/local/bin/sslRenewal.sh >> /var/log/sslRenewal.log 2>\&1
+```
+
+```
+sudo certbot renew --webroot -w /certss
 ```
 
