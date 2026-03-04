@@ -81,8 +81,30 @@ create a file with the command.
 # Runs at 3:00 AM and 3:00 PM every day
 0 3 \* \* 2 /usr/local/bin/sslRenewal.sh >> /var/log/sslRenewal.log 2>\&1
 ```
-
+---
 ```
 sudo certbot renew --webroot -w /certss
+```
+```
+server {
+    listen 80;
+    server_name
+        registry.v2.xeptagon.com
+        keycloak.registry.v2.xeptagon.com
+        web.registry.v2.xeptagon.com
+        www.registry.v2.xeptagon.com
+        www.keycloak.registry.v2.xeptagon.com
+        www.web.registry.v2.xeptagon.com;
+
+    location ^~ /.well-known/acme-challenge/ {
+        root /certss;
+        default_type "text/plain";
+        try_files $uri =404;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
 ```
 
